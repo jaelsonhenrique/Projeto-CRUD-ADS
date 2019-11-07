@@ -1,14 +1,23 @@
-package unvis.edu.usuario;
+package univs.edu.usuario;
 
-/**
- *
- * @author Jaelson Henrique
- */
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario {
-
+    @Id
+    @GeneratedValue
     private int idUsuario;
+    
+    @Column(length = 100, nullable = false)
     private String nomeUsuario;
+    
+    @Column(length = 100, nullable = false, unique = true)
     private String login;
+    
+    @Column(length = 100, nullable = false)
     private String senha;
 
     public int getIdUsuario() {
@@ -42,4 +51,5 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    
 }
