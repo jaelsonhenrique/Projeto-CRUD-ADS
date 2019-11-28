@@ -3,12 +3,11 @@ package univs.edu.usuario;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import univs.edu.usuario.Usuario;
 
 public class UsuarioTableModel extends AbstractTableModel {
 
     private List<Usuario> usuarios = new ArrayList<>();
-    private String[] colunas = {"Id", "Nome", "Login"};
+    private String[] colunas = {"Id", "Nome", "Login", "Senha"};
 
     public UsuarioTableModel(List<Usuario> usuarios) {
         this.usuarios = usuarios;
@@ -34,13 +33,12 @@ public class UsuarioTableModel extends AbstractTableModel {
                 return usuario.getNomeUsuario();
             case 2:
                 return usuario.getLogin();
-            //case 3:
-              //  return usuario.getSenha();
+            case 3:
+                return usuario.getSenha();
         }
         return null;
     }
 
-    @Override
     public String getColumnName(int index) {
         switch (index) {
             case 0:
